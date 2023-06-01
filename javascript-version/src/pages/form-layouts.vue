@@ -11,7 +11,7 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/pages/form-layouts/Demo
     <VRow>
       <VCol
         cols="12"
-        md="6"
+        md="12"
       >
         <!-- 👉 Horizontal Form -->
         <VCard title="Horizontal Form">
@@ -20,47 +20,47 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/pages/form-layouts/Demo
           </VCardText>
         </VCard>
       </VCol>
-      <VCol
+      <!-- <VCol
         cols="12"
         md="6"
-      >
+      > -->
         <!-- 👉 Horizontal Form with Icons -->
-        <VCard title="Horizontal Form with Icons">
+        <!-- <VCard title="Horizontal Form with Icons">
           <VCardText>
             <DemoFormLayoutHorizontalFormWithIcons />
           </VCardText>
         </VCard>
-      </VCol>
-      <VCol
+      </VCol> -->
+      <!-- <VCol
         cols="12"
         md="6"
-      >
+      > -->
         <!-- 👉 Vertical Form -->
-        <VCard title="Vertical Form">
+        <!-- <VCard title="Vertical Form">
           <VCardText>
             <DemoFormLayoutVerticalForm />
           </VCardText>
         </VCard>
-      </VCol>
-      <VCol
+      </VCol> -->
+      <!-- <VCol
         cols="12"
         md="6"
-      >
+      > -->
         <!-- 👉 Vertical Form with Icons -->
-        <VCard title="Vertical Form with Icons">
+        <!-- <VCard title="Vertical Form with Icons">
           <VCardText>
             <DemoFormLayoutVerticalFormWithIcons />
           </VCardText>
         </VCard>
-      </VCol>
-      <VCol cols="12">
+      </VCol> -->
+      <!-- <VCol cols="12"> -->
         <!-- 👉 Multiple Column -->
-        <VCard title="Multiple Column">
+        <!-- <VCard title="Multiple Column">
           <VCardText>
             <DemoFormLayoutMultipleColumn />
           </VCardText>
         </VCard>
-      </VCol>
+      </VCol> -->
     </VRow>
   </div>
 </template>

@@ -10,6 +10,7 @@ import '@styles/styles.scss'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 
+
 loadFonts()
 
 
@@ -24,3 +25,4 @@ app.use(router)
 
 // Mount vue app
 app.mount('#app')
+

@@ -34,12 +34,12 @@ const upgradeBanner = computed(() => {
         </IconBtn>
 
         <!-- 👉 Search -->
-        <div
+        <!-- <div
           class="d-flex align-center cursor-pointer"
           style="user-select: none;"
-        >
+        > -->
           <!-- 👉 Search Trigger button -->
-          <IconBtn>
+          <!-- <IconBtn>
             <VIcon icon="mdi-magnify" />
           </IconBtn>
 
@@ -47,13 +47,13 @@ const upgradeBanner = computed(() => {
             <span class="me-3">Search</span>
             <span class="meta-key">&#8984;K</span>
           </span>
-        </div>
+        </div> -->
 
         <VSpacer />
 
         <IconBtn
           class="me-2"
-          href="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free"
+          href="/form-layouts"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -73,21 +73,21 @@ const upgradeBanner = computed(() => {
     <template #vertical-nav-content>
       <VerticalNavLink
         :item="{
-          title: 'Dashboard',
+          title: 'Deployment List',
           icon: 'mdi-home-outline',
           to: '/dashboard',
         }"
       />
-      <VerticalNavLink
+      <!-- <VerticalNavLink
         :item="{
           title: 'Account Settings',
           icon: 'mdi-account-cog-outline',
           to: '/account-settings',
         }"
-      />
+      /> -->
 
       <!-- 👉 Pages -->
-      <VerticalNavSectionTitle
+      <!-- <VerticalNavSectionTitle
         :item="{
           heading: 'Pages',
         }"
@@ -112,10 +112,10 @@ const upgradeBanner = computed(() => {
           icon: 'mdi-information-outline',
           to: '/no-existence',
         }"
-      />
+      /> -->
 
       <!-- 👉 User Interface -->
-      <VerticalNavSectionTitle
+      <!-- <VerticalNavSectionTitle
         :item="{
           heading: 'User Interface',
         }"
@@ -133,8 +133,8 @@ const upgradeBanner = computed(() => {
           icon: 'mdi-eye-outline',
           to: '/icons',
         }"
-      />
-      <VerticalNavLink
+      /> -->
+      <!-- <VerticalNavLink
         :item="{
           title: 'Cards',
           icon: 'mdi-credit-card-outline',
@@ -154,11 +154,10 @@ const upgradeBanner = computed(() => {
           icon: 'mdi-form-select',
           to: '/form-layouts',
         }"
-      />
+      /> -->
     </template>
 
-    <template #after-vertical-nav-items>
-      <!-- 👉 illustration -->
+    <!-- <template #after-vertical-nav-items>
       <a
         href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template"
         target="_blank"
@@ -173,7 +172,7 @@ const upgradeBanner = computed(() => {
           style="max-width: 230px;"
         >
       </a>
-    </template>
+    </template> -->
 
     <!-- 👉 Pages -->
     <slot />

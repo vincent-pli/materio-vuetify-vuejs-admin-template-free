@@ -31,7 +31,7 @@ const newProject = {
 
 <template>
   <VRow class="match-height">
-    <VCol
+    <!-- <VCol
       cols="12"
       md="4"
     >
@@ -43,9 +43,9 @@ const newProject = {
       md="8"
     >
       <AnalyticsTransactions />
-    </VCol>
+    </VCol> -->
 
-    <VCol
+    <!-- <VCol
       cols="12"
       md="4"
     >
@@ -57,9 +57,9 @@ const newProject = {
       md="4"
     >
       <AnalyticsTotalEarning />
-    </VCol>
+    </VCol> -->
 
-    <VCol
+    <!-- <VCol
       cols="12"
       md="4"
     >
@@ -92,9 +92,9 @@ const newProject = {
           <AnalyticsBarCharts />
         </VCol>
       </VRow>
-    </VCol>
+    </VCol> -->
 
-    <VCol
+    <!-- <VCol
       cols="12"
       md="4"
     >
@@ -106,7 +106,7 @@ const newProject = {
       md="8"
     >
       <AnalyticsDepositWithdraw />
-    </VCol>
+    </VCol> -->
 
     <VCol cols="12">
       <AnalyticsUserTable />

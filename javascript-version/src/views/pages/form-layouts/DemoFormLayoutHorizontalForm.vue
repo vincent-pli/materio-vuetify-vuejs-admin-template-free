@@ -1,9 +1,50 @@
-<script setup>
-const firstName = ref('')
-const email = ref('')
-const mobile = ref()
-const password = ref()
-const checkbox = ref(false)
+<script>
+import axios from 'axios';
+
+export default {
+    data () {
+      return {
+        name : "",
+        model: "",
+        select: { id: 'text-generation', title: 'Text Generation' },
+        items: [
+          { id: 'automatic-speech-recognition', title: 'Automatic Speech Recognition' },
+          { id: 'text-generation', title: 'Text Generation' },
+          { id: 'image-to-text', title: 'Image to Text' },
+        ],
+      }
+    },
+
+    methods: {
+      async getData() {
+          try {
+            const response = await this.$http.get(
+              "http://jsonplaceholder.typicode.com/posts"
+            );
+            // JSON responses are automatically parsed.
+            this.posts = response.data;
+          } catch (error) {
+            console.log(error);
+          }
+      },
+
+      async submit() {
+        axios.post('http://127.0.0.1:8000/launch', {
+          name: this.name,
+          task: this.select["id"],
+          model: this.model
+        })
+        .then(function (response) {
+          console.log(response);
+          this.$router.push("/dashboard");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        
+      },
+    },
+  }
 </script>
 
 <template>
@@ -16,7 +57,7 @@ const checkbox = ref(false)
             cols="12"
             md="3"
           >
-            <label for="firstName">First Name</label>
+            <label for="name">Name</label>
           </VCol>
 
           <VCol
@@ -24,9 +65,9 @@ const checkbox = ref(false)
             md="9"
           >
             <VTextField
-              id="firstName"
-              v-model="firstName"
-              placeholder="First Name"
+              id="name"
+              v-model="name"
+              placeholder="Name of your deployment"
               persistent-placeholder
             />
           </VCol>
@@ -35,24 +76,27 @@ const checkbox = ref(false)
 
       <VCol cols="12">
         <VRow no-gutters>
-          <!-- 👉 Email -->
           <VCol
             cols="12"
             md="3"
           >
-            <label for="email">Email</label>
+            <label for="task">Task</label>
           </VCol>
 
           <VCol
             cols="12"
             md="9"
           >
-            <VTextField
-              id="email"
-              v-model="email"
-              placeholder="Email"
-              persistent-placeholder
-            />
+            <v-select
+              v-model="select"
+              :items="items"
+              item-text="text"
+              item-value="id"
+              label="Select"
+              persistent-hint
+              return-object
+              single-line
+            ></v-select>
           </VCol>
         </VRow>
       </VCol>
@@ -64,7 +108,7 @@ const checkbox = ref(false)
             cols="12"
             md="3"
           >
-            <label for="mobile">Mobile</label>
+            <label for="model">Model Path</label>
           </VCol>
 
           <VCol
@@ -72,70 +116,25 @@ const checkbox = ref(false)
             md="9"
           >
             <VTextField
-              id="mobile"
-              v-model="mobile"
-              type="number"
-              placeholder="Number"
+              id="model"
+              v-model="model"
+              placeholder="Model path for example: gpt2"
               persistent-placeholder
             />
           </VCol>
         </VRow>
       </VCol>
 
-      <VCol cols="12">
-        <VRow no-gutters>
-          <!-- 👉 Password -->
-          <VCol
-            cols="12"
-            md="3"
-          >
-            <label for="password">Password</label>
-          </VCol>
-
-          <VCol
-            cols="12"
-            md="9"
-          >
-            <VTextField
-              id="password"
-              v-model="password"
-              type="password"
-              placeholder="Password"
-              persistent-placeholder
-            />
-          </VCol>
-        </VRow>
-      </VCol>
-
-      <!-- 👉 Remember me -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-      >
-        <VCheckbox
-          v-model="checkbox"
-          label="Remember me"
-        />
-      </VCol>
-
-      <!-- 👉 submit and reset button -->
       <VCol
         offset-md="3"
         cols="12"
         md="9"
         class="d-flex gap-4"
       >
-        <VBtn type="submit">
+        <VBtn @click="submit()" type="submit">
           Submit
         </VBtn>
-        <VBtn
-          color="secondary"
-          variant="tonal"
-          type="reset"
-        >
-          Reset
-        </VBtn>
+
       </VCol>
     </VRow>
   </VForm>
